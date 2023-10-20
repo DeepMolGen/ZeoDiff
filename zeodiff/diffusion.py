@@ -138,7 +138,7 @@ class GaussianDiffusion(nn.Module):
 				for i in range(len(samples)):
 						arr = samples[i].reshape(channels,grid_size, grid_size, grid_size)
 						cell_param = [j*100 for j in cell_param_list[i]]
-						np.save('sample_'+str(count), arr)
+						np.save(directory+'/sample_'+str(count), arr)
 						np.save(directory+'/cell_'+str(count), cell_param)
 						write_visit_sample(arr, cell = cell_param, stem = 'sample_'+str(count), save_dir=directory)
 						count += 1
@@ -151,7 +151,7 @@ class GaussianDiffusion(nn.Module):
 		for i in range(len(samples)):
 				arr = samples[i].reshape(channels,grid_size, grid_size, grid_size)
 				cell_param = [j*100 for j in cell_param_list[i]]
-				np.save('sample_'+str(count), arr)
+				np.save(directory+'/sample_'+str(count), arr)
 				np.save(directory+'/cell_'+str(count), cell_param)
 				write_visit_sample(arr, cell = cell_param, stem = 'sample_'+str(count), save_dir=directory)
 				count += 1

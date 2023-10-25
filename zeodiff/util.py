@@ -18,8 +18,7 @@ def timesdata_to_array(root='Sample_3/', upper_scale = 5000, lower_scale = -4000
     file_list = glob.glob(root+'*_si.times')
     file_list.sort()
     
-    stem_list = [(i.split('/')[1]).split('_si.times')[-2] for i in file_list]
-    
+    stem_list = [(i.split('/')[-1]).split('_si.times')[-2] for i in file_list]
     grids = []
     
     count = 0
